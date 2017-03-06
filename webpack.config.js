@@ -34,7 +34,8 @@ module.exports = {
       template: require('html-webpack-template'),
       links: [
         '/node_modules/hack/dist/hack.css',
-        '/node_modules/hack/dist/standard.css'
+        '/node_modules/hack/dist/standard.css',
+        '/app/styles.css'
       ],
       appMountId: 'app',
     }),
