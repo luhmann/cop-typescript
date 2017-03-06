@@ -21,6 +21,7 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "hack": "^0.7.7",
     "nodemon": "^1.11.0"
   }
 }

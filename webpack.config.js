@@ -19,15 +19,11 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.js', '.json']
   },
+  devtool: '#source-map',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.ts$/,
-        use: ['ts-loader']
       },
     ],
   },
@@ -36,6 +32,11 @@ module.exports = {
       title: 'Typescript Tryout',
       inject: false,
       template: require('html-webpack-template'),
+      links: [
+        '/node_modules/hack/dist/hack.css',
+        '/node_modules/hack/dist/standard.css'
+      ],
+      appMountId: 'app',
     }),
     new DashboardPlugin(),
   ],
