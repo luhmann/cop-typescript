@@ -18,13 +18,13 @@ class Animal {
 
 class Pony extends Animal {
   move() {
-    log('I am roaming the earth on my little hooves')
+    log(`${this.name.toUpperCase()}: I am roaming the earth on my little hooves`)
   }
 }
 
 class Dog extends Animal {
   move() {
-    log('I am roaming the earth on my little paws')
+    log(`${this.name.toUpperCase()}: I am roaming the earth on my little paws`)
   }
 }
 
