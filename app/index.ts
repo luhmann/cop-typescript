@@ -1,8 +1,10 @@
 import { log } from './lib/log'
 
-class Animal {
-  // constructor
-  constructor(name = 'Greedo') {
+abstract class Animal {
+  readonly name: string
+  private secret = 'I love cookies'
+
+  constructor(name: string = 'Greedo') {
     this.name = name;
   }
 
@@ -14,22 +16,25 @@ class Animal {
     log(`PROTOTYPE: Hello my name is ${this.name}`)
   }
 
+  tell() {
+    log(this.secret)
+  }
+
   static id() {
     log('STATIC: I am a static wild and dangerous animal', 'error')
   }
-
 }
 
 // two syntaxes
 const Pony = class extends Animal {
   move() {
-    log('I am roaming the earth on my little hooves', 'success')
+    log(`${this.name.toUpperCase()}: I am roaming the earth on my little hooves`, 'success')
   }
 }
 
 class Dog extends Animal {
   move() {
-    log('I am roaming the earth on my little paws', 'success')
+    log(`${this.name.toUpperCase()}: I am roaming the earth on my little paws`, 'success')
   }
 
   static id() {
@@ -37,8 +42,11 @@ class Dog extends Animal {
   }
 }
 
+const appContainer = document.querySelector('#app')
 
-document.querySelector('#app').insertAdjacentHTML('beforeend', '<div class="container log"></div>')
+appContainer && appContainer.insertAdjacentHTML('beforeend', '<div class="container log"></div>')
+
+
 
 const hank = new Pony('Hank')
 const eddy = new Dog('Eddy')
@@ -46,6 +54,7 @@ const eddy = new Dog('Eddy')
 // prototype methods
 hank.greet()
 eddy.greet()
+eddy.tell()
 
 // overwritten methods
 hank.move()

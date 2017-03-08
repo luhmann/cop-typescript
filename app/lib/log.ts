@@ -1,5 +1,8 @@
-export function log(message, level = 'info') {
-  document
-    .querySelector('.log')
-    .insertAdjacentHTML('beforeend', `<div class="alert alert-${level}">${message}</div>`);
+export function log(message: string, level = 'info'): void {
+  const logContainer = document.querySelector('.log')
+
+  if (logContainer) {
+    logContainer.insertAdjacentHTML('beforeend', `<div class="alert alert-${level}">${message}</div>`);
+  }
+
 }
