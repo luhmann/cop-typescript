@@ -15,7 +15,8 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "jsx": "react"
 
   },
   "exclude": [

@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const PATHS = Object.freeze({
-  APP: path.resolve(__dirname, 'app'),
+  APP: path.resolve(__dirname, 'app', 'index.tsx'),
   BUILD: path.resolve(__dirname, 'dist')
 })
 
@@ -27,7 +27,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: ['ts-loader']
       },
     ],
