@@ -1,5 +1,22 @@
 import { log } from './lib/log'
 
+const appContainer = document.querySelector('#app')
+appContainer && appContainer.insertAdjacentHTML('beforeend', '<div class="container log"></div>')
+
+interface Named {
+  name: string
+}
+
+interface CanMove {
+  move(): void
+}
+
+interface Body {
+  legs: number
+  head: number
+  hasHair: boolean
+}
+
 abstract class Animal {
   readonly name: string
   private secret = 'I love cookies'
@@ -26,7 +43,7 @@ abstract class Animal {
 }
 
 // two syntaxes
-const Pony = class extends Animal {
+class Pony extends Animal {
   move() {
     log(`${this.name.toUpperCase()}: I am roaming the earth on my little hooves`, 'success')
   }
@@ -42,24 +59,51 @@ class Dog extends Animal {
   }
 }
 
-const appContainer = document.querySelector('#app')
+class Person implements Named, CanMove {
+  name: string
+  vices: string[] = []
+  body: Body
 
-appContainer && appContainer.insertAdjacentHTML('beforeend', '<div class="container log"></div>')
+  move() {
+    log(`I can walk`)
+  }
+}
+
+new Pony('hank')
+new Dog('Eddy')
+
+let carrie: Named
+carrie = new Pony('carrie')
+
+let harry = new Person()
+harry.vices.push('gluttony')
+//harry.vices.push(1)
+harry.body = {
+  legs: 2,
+  head: 1,
+  hasHair: false
+}
+
+let insect: Named & CanMove
+insect = {
+  name: 'maya',
+  move: () => {
+    log('Maya is flying')
+  }
+}
+
+let mammal: Named | CanMove
+mammal = {
+  name: 'Benjamin'
+}
 
 
+const getAnimal: Promise<Named & CanMove> = new Promise((resolve) => {
+  setTimeout(() => {
+    return insect
+  }, 500)
+})
 
-const hank = new Pony('Hank')
-const eddy = new Dog('Eddy')
-
-// prototype methods
-hank.greet()
-eddy.greet()
-eddy.tell()
-
-// overwritten methods
-hank.move()
-eddy.move()
-
-// static functions
-Animal.id()
-Dog.id()
+getAnimal.then((maya) => {
+  console.log(maya.name);
+})
