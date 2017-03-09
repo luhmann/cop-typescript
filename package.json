@@ -10,6 +10,8 @@
     "start": "nodemon --watch webpack.config.js --exec \"webpack-dashboard -- webpack-dev-server --env development\""
   },
   "devDependencies": {
+    "@types/react": "^15.0.14",
+    "@types/react-dom": "^0.14.23",
     "css-loader": "^0.26.1",
     "html-webpack-plugin": "^2.28.0",
     "html-webpack-template": "^6.0.1",
@@ -25,6 +27,7 @@
     "hack": "^0.7.7",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "router5": "^4.5.1",
     "styled-components": "^1.4.4"
   }
 }
