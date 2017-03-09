@@ -1,2 +1,8 @@
 # webpack-typescript-boilerplate
-A boilerplate to play with typescript
+
+Some files to play around with typesscript
+
+## Installation
+
+1. `npm install`
+2. That's it
