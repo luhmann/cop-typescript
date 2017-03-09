@@ -2,12 +2,14 @@
 
 import * as React from 'react'
 import { render } from 'react-dom'
-import Router5 from 'router5'
+// import Router5 from 'router5'
 
 import Button from './Button'
 
 render(
-  <Button>Hello World!</Button> ,
+  <div className="container">
+    <Button>Hello World!</Button>
+  </div>,
   document.querySelector('#app')
 )
 
