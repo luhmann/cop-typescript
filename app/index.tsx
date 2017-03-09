@@ -4,7 +4,9 @@ import { render } from 'react-dom'
 import Button from './Button'
 
 render(
-  <Button>Hello World!</Button> ,
+  <div className="container">
+    <Button>Hello World!</Button>
+  </div>,
   document.querySelector('#app')
 )
 
