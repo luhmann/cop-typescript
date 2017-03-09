@@ -1,5 +1,7 @@
 import { log } from './lib/log'
 
+document.querySelector('#app').insertAdjacentHTML('beforeend', '<div class="container log"></div>')
+
 class Animal {
   // constructor
   constructor(name = 'Greedo') {
@@ -11,7 +13,7 @@ class Animal {
   }
 
   greet() {
-    log(`PROTOTYPE: Hello my name is ${this.name}`)
+    log(`PROTOTYPE: Hello my name is ${this.name.toUpperCase()}`)
   }
 
   static id() {
@@ -36,9 +38,6 @@ class Dog extends Animal {
     log('STATIC: I am a domesticated animal', 'error')
   }
 }
-
-
-document.querySelector('#app').insertAdjacentHTML('beforeend', '<div class="container log"></div>')
 
 const hank = new Pony('Hank')
 const eddy = new Dog('Eddy')
