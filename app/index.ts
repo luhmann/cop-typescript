@@ -1,5 +1,7 @@
 import { log } from './lib/log'
 
+document.querySelector('#app').insertAdjacentHTML('beforeend', '<div class="container log"></div>')
+
 class Animal {
   // constructor
   constructor(name = 'Greedo') {
@@ -37,8 +39,6 @@ class Dog extends Animal {
   }
 }
 
-
-document.querySelector('#app').insertAdjacentHTML('beforeend', '<div class="container log"></div>')
 
 const hank = new Pony('Hank')
 const eddy = new Dog('Eddy')
