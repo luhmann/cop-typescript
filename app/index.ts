@@ -1,5 +1,8 @@
 import { log } from './lib/log'
 
+const appContainer = document.querySelector('#app')
+appContainer && appContainer.insertAdjacentHTML('beforeend', '<div class="container log"></div>')
+
 abstract class Animal {
   readonly name: string
   private secret = 'I love cookies'
@@ -41,12 +44,6 @@ class Dog extends Animal {
     log('STATIC: I am a domesticated animal', 'error')
   }
 }
-
-const appContainer = document.querySelector('#app')
-
-appContainer && appContainer.insertAdjacentHTML('beforeend', '<div class="container log"></div>')
-
-
 
 const hank = new Pony('Hank')
 const eddy = new Dog('Eddy')
