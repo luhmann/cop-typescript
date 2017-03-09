@@ -5,7 +5,8 @@ document.querySelector('#app').insertAdjacentHTML('beforeend', '<div class="cont
 class Animal {
   // constructor
   constructor(name = 'Greedo') {
-    this.name = name;
+    this.name = name
+    this.secret = 'I eat cookies'
   }
 
   move() {
@@ -19,6 +20,7 @@ class Animal {
   static id() {
     log('STATIC: I am a static wild and dangerous animal', 'error')
   }
+
 
 }
 
